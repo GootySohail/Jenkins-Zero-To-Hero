@@ -8,24 +8,18 @@ pipeline {
       steps {
         sh 'mvn compile'
       }
-    
-      stage('Build'){
         steps{
           sh 'mvn Build'
         }
-      }
-    stage('Test'){
-      step{
+       steps{
         sh 'mvn test'
       }
-    }
-     stage('Package'){
-      step{
+      steps{
         sh 'mvn Package'
       }
-    }
+    
 
-      step{
+      steps{
         sh 'mvn -version'
       }
     }
