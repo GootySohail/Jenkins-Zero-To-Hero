@@ -11,11 +11,11 @@ pipeline {
       steps {
         // Compile the project
         // Build the project
-        sh 'mvn install'
         // Run tests
         sh 'mvn test'
         // Package the project
         sh 'mvn package'
+        sh 'mvn clean package'
         // Display Maven version
         sh 'mvn -version'
       }
