@@ -6,9 +6,25 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        sh 'mvn clean package'
+        sh 'mvn compile'
       }
     }
+      stage('Build'){
+        steps{
+          sh 'mvn Build'
+        }
+      }
+    stage('Test'){
+      step{
+        sh 'mvn test'
+      }
+    }
+     stage('Package'){
+      step{
+        sh 'mvn Package'
+      }
+    }
+      
     stage('Front-end') {
       agent {
         docker { image 'node:16-alpine' }
