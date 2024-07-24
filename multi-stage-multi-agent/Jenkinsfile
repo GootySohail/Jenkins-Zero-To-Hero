@@ -10,7 +10,6 @@ pipeline {
       }
       steps {
         // Compile the project
-        sh 'mvn compile'
         // Build the project
         sh 'mvn install'
         // Run tests
